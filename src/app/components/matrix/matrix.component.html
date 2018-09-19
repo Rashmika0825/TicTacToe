@@ -1,0 +1,14 @@
+<div>
+		<div class="gameStatus" >
+			{{Status}}
+		</div>
+		<div class="matrix" *ngFor="let row of rowArray">
+			<cell *ngFor="let col of columnArray"
+				[state]="gameBoard[col+row*3]"
+				(click)="Play(col+row*3)"
+			>
+			</cell>
+		</div>
+		<button class="restart" (click)="StartNewGame()">New Game</button>
+</div>
+	
